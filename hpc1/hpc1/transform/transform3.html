@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSS練習</title>
+<style>
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-family: "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro";
+  background-color: #ddd;
+}
+div{
+  width: 500px;
+  height: 300px;
+  margin: 10px;
+  color: #fff;
+  background-color: orange;
+}
+#aaa{
+  transform: rotate(5deg);
+}
+#bbb{
+  transform: perspective(100px) rotateX(5deg); /* X軸(横軸)を中心にして回転 */
+}
+#ccc{
+  transform: perspective(100px) rotateY(5deg); /* Y軸(縦軸)を中心にして回転 */
+}
+#ddd{
+  transform: rotateZ(5deg); /* Z軸を中心に回転 */
+}
+#eee{
+  transform: perspective(100px) rotate3d(0,0,1,5deg); /* Z軸を中心に回転 */
+}
+</style>
+</head>
+
+<body>
+  <h1>transformプロパティ(rotate：回転)</h1>
+  <div>rotate(5deg)<br><img src="ai.png" alt="" id="aaa"></div>
+  <div>rotateX(5deg)<br><img src="ai.png" alt="" id="bbb"></div>
+  <div>rotateY(5deg)<br><img src="ai.png" alt="" id="ccc"></div>
+  <div>rotateZ(5deg)<br><img src="ai.png" alt="" id="ddd"></div>
+  <div>rotate3d(0,0,1,5deg)<br><img src="ai.png" alt="" id="eee"></div>
+</body>
+</html>

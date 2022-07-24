@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSS練習</title>
+<style>
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-family: "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro";
+  background-color: #ddd;
+}
+div{
+  width: 500px;
+  height: 300px;
+  margin: 10px;
+  color: #fff;
+  background-color: orange;
+}
+#aaa{
+  transform: skew(20deg, 5deg);
+}
+#bbb{
+  transform: skewX(5deg); /* X軸に沿った変形 */
+}
+#ccc{
+  transform: skewY(5deg); /* Y軸に沿った変形 */
+}
+</style>
+</head>
+
+<body>
+  <h1>transformプロパティ(skew：傾斜)</h1>
+  <div>skew(5deg, 5deg)<br><img src="ai.png" alt="" id="aaa"></div>
+  <div>skewX(5deg)<br><img src="ai.png" alt="" id="bbb"></div>
+  <div>skewY(5deg)<br><img src="ai.png" alt="" id="ccc"></div>
+</body>
+</html>

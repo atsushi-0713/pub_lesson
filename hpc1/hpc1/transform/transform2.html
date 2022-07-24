@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSS練習</title>
+<style>
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-family: "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro";
+  background-color: #ddd;
+}
+div{
+  width: 500px;
+  height: 300px;
+  margin: 10px;
+  color: #fff;
+  background-color: orange;
+}
+#aaa{
+  transform: scale(0.5, 1.0);
+}
+#bbb{
+  transform: scale(0.7); /* 省略時は、Y方向はX方向と同じ値が適用 */
+}
+#ccc{
+  transform: scaleX(0.7);
+}
+#ddd{
+  transform: scaleY(0.7);
+}
+#eee{
+  transform: perspective(100px) scaleZ(0.7);
+}
+#fff{
+  transform: perspective(100px) scale3d(0.7, 1.0, 0.5);
+}
+</style>
+</head>
+
+<body>
+  <h1>transformプロパティ(scale：大きさ変更)</h1>
+  <div>scale(0.5,1.0)<br><img src="ai.png" alt="" id="aaa"></div>
+  <div>scale(0.7)<br><img src="ai.png" alt="" id="bbb"></div>
+  <div>scaleX(0.7)<br><img src="ai.png" alt="" id="ccc"></div>
+  <div>scaleY(0.7)<br><img src="ai.png" alt="" id="ddd"></div>
+  <div>scaleZ(0.7)<br><img src="ai.png" alt="" id="eee"></div>
+  <div>scale3d(0.7, 1.0, 0.5)<br><img src="ai.png" alt="" id="fff"></div>
+</body>
+</html>

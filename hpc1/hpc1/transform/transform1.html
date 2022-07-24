@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSS練習</title>
+<style>
+body{
+  font-family: "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro";
+  background-color: #ddd;
+  font-size: 20px;
+}
+div{
+  width: 500px;
+  height: 300px;
+  margin: 10px;
+  color: #fff;
+  background-color: orange;
+}
+#aaa{
+  transform: translate(20px,50px);
+}
+#bbb{
+  transform: translate(50px); /* 省略時はY方向の距離はゼロ */
+}
+#ccc{
+  transform: translateX(50px);
+}
+#ddd{
+  transform: translateY(50px);
+}
+#eee{
+  transform: perspective(100px) translateZ(-50px);
+}
+#fff{
+  transform: perspective(100px) translate3d(40px,50px,30px);
+}
+</style>
+</head>
+
+<body>
+  <h1>transformプロパティ(translate：移動)</h1>
+  <div>translate(20px,50px)<br><img src="ai.png" alt="" id="aaa"></div>
+  <div>translate(50px)<br><img src="ai.png" alt="" id="bbb"></div>
+  <div>translateX(50px)<br><img src="ai.png" alt="" id="ccc"></div>
+  <div>translateY(50px)<br><img src="ai.png" alt="" id="ddd"></div>
+  <div>translateZ(-50px)<br><img src="ai.png" alt="" id="eee"></div>
+  <div>translate3d(40px,50px,30px)<br><img src="ai.png" alt="" id="fff"></div>
+</body>
+</html>

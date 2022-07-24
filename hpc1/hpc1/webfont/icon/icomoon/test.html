@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Webフォント</title>
+<style>
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?xl8bqu');
+  src:  url('fonts/icomoon.eot?xl8bqu#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?xl8bqu') format('truetype'),
+    url('fonts/icomoon.woff?xl8bqu') format('woff'),
+    url('fonts/icomoon.svg?xl8bqu#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.icon{
+  font-family: icomoon;
+}
+.test{
+  font-size: 40px;
+  color:red;
+  position: relative;
+  top:10px;
+}
+</style>
+</head>
+<body>
+  <p><span class="icon">&#xe900;</span>自作のWebフォント</p>
+  <p><span class="icon test">&#xe900;</span>自作のWebフォント</p>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSS練習</title>
+<style>
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-family: "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro";
+}
+p{
+  margin: 20px;
+  font-size: 20px;
+}
+/* サーバーにこのhtmlとWebフォントのデータがアップロードされている必要があります */
+@font-face {
+  font-family: "MyFont";
+  src: url("JapanSans80.eot?") format('eot'); /* IE9用 */
+  src: url("JapanSans80.eot?#iefix") format('embedded-opentype'), /* IE6-IE8用 */
+       url("JapanSans80.woff") format('woff'), /* モダンブラウザ用 */
+       url("JapanSans80.ttf") format('truetype'); /* Safari, Android, iOS用 */
+}
+.wf{
+  font-family: "MyFont";
+}
+</style>
+</head>
+
+<body>
+  <h1>Webフォント</h1>
+  <p>ローカルフォント(デバイス内にすでにあるフォント)を利用しています</p>
+  <p class="wf">Webフォント(JapanSans)を利用しています</p>
+</body>
+</html>

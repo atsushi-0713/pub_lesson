@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSS練習</title>
+<style>
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-family: "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro";
+}
+p{
+  background-color: orange;
+  margin: 10px;
+}
+#box1{
+  writing-mode:horizontal-tb;
+}
+#box2{
+  writing-mode:vertical-rl;
+}
+#box3{
+  writing-mode:vertical-lr;
+}
+</style>
+</head>
+<body>
+  <h1>writing-modeプロパティ</h1>
+  <p id="box1">この要素はid名box1です。<br>abc123&copy;</p>
+  <p id="box2">この要素はid名box2です。<br>abc123&copy;</p>
+  <p id="box3">この要素はid名box3です。<br>abc123&copy;</p>
+</body>
+</html>

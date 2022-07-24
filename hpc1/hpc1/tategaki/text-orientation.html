@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSS練習</title>
+<style>
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-family: "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro";
+}
+p{
+  background-color: orange;
+  margin: 10px;
+  float: left;
+  writing-mode:vertical-rl;
+}
+#box1{
+  text-orientation: mixed; /* IE、Edge、Safariではベンダープレフィックスをつけても無効 */
+}
+#box2{
+  text-orientation: upright; /* IE、Edge、Safariではベンダープレフィックスをつけても無効 */
+}
+#box3{
+  text-orientation: sideways; /* IE、Edge、Safariではベンダープレフィックスをつけても無効 */
+}
+</style>
+</head>
+<body>
+  <h1>text-orientationプロパティ</h1>
+  <p id="box1">この要素はid名box1です。<br>abc123&copy;</p>
+  <p id="box2">この要素はid名box2です。<br>abc123&copy;</p>
+  <p id="box3">この要素はid名box3です。<br>abc123&copy;</p>
+</body>
+</html>

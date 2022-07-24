@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSS練習</title>
+<style>
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-family: "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro";
+  background-color: #eee;
+}
+div{
+  width: 400px;
+  height: 200px;
+  margin: 10px;
+  color: #fff;
+  background-color: orange;
+}
+#bbb{
+  animation-name: anim1; /* アニメーションに用いるキーフレーム名 */
+  animation-duration: 2s; /* アニメーションが1回にかかる時間 */
+  animation-timing-function: linear; /* アニメーションの緩急 */
+  animation-delay: 0s; /* アニメーション開始に遅れる時間 */
+  animation-iteration-count: 2; /* アニメーションの実行回数 */
+  animation-direction: normal; /* アニメーションの再生方向 */
+}
+@keyframes anim1 {
+  0%  { width: 400px;}
+  50% { width: 800px;}
+  100%{ width: 400px;}
+}
+</style>
+</head>
+
+<body>
+  <h1>animationプロパティ</h1>
+  <div id="bbb">animation系プロパティによる個別指定</div>
+</body>
+</html>

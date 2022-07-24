@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>CSS演習</title>
+<style>
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-family: "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro";
+}
+li{
+  list-style-type: none;
+}
+h1{
+  text-align: center;
+  font-size: 24px;
+  margin: 20px 0;
+}
+.container{
+  margin: 0 auto;
+  width:1000px;
+  display: flex;
+}
+#navi li{
+  text-align: center;
+  width:200px;
+  padding: 10px 0;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  border-bottom: 5px solid transparent;
+}
+#navi li:hover{
+  border-bottom: 5px solid hotpink;
+}
+</style>
+</head>
+<body>
+  <h1>transitionプロパティの練習１(解答)</h1>
+  <ul id="navi" class="container">
+    <li>ナビ１</li>
+    <li>ナビ２</li>
+    <li>ナビ３</li>
+    <li>ナビ４</li>
+    <li>ナビ５</li>
+  </ul>
+</body>
+</html>

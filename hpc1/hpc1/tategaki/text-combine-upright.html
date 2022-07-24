@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSS練習</title>
+<style>
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-family: "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro";
+}
+p{
+  background-color: orange;
+  margin: 10px;
+  float:left;
+  writing-mode:vertical-rl;
+}
+#tate1 span{
+  text-combine-upright: all;
+}
+</style>
+</head>
+<body>
+  <h1>text-combine-uprightプロパティ</h1>
+  <p>8時から12時まで、全品500円引き</p>
+  <p id="tate1"><span>8</span>時から<span>12</span>時まで、全品<span>500</span>円引き</p>
+</body>
+</html>

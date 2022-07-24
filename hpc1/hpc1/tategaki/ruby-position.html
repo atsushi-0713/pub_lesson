@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSS練習</title>
+<style>
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-family: "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro";
+}
+p{
+  background-color: orange;
+  margin: 10px;
+  float:left;
+  writing-mode:vertical-rl;
+}
+#ruby1{
+  ruby-position: over;
+}
+#ruby2{
+  ruby-position: under; /*Firefox以外は未実装*/
+}
+</style>
+</head>
+<body>
+  <h1>ruby-positionプロパティ</h1>
+  <p>
+    <ruby id="ruby1">
+      漢<rt>かん</rt>
+      字<rt>じ</rt>
+    </ruby>
+  </p>
+  <p>
+    <ruby id="ruby2">
+      漢<rt>かん</rt>
+      字<rt>じ</rt>
+    </ruby>
+  </p>
+</body>
+</html>

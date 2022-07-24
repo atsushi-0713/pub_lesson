@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSS練習</title>
+<style>
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-family: "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro";
+}
+p{
+  background-color: orange;
+  margin: 10px;
+  float:left;
+  writing-mode:vertical-rl;
+  -ms-writing-mode:tb-rl; /* IE用 */
+  -webkit-writing-mode:vertical-rl; /* Safari用 */
+}
+#line1{
+  text-decoration: underline;
+}
+#line2{
+  text-decoration: underline;
+  text-underline-position: right;
+  -webkit-text-underline-position: right;
+  -moz-text-underline-position: right;
+  -ms-text-underline-position: right;
+}
+#line3{
+  text-decoration: underline;
+  text-underline-position: left;
+  -webkit-text-underline-position: left;
+  -moz-text-underline-position: left;
+  -ms-text-underline-position: left;
+}
+</style>
+</head>
+<body>
+  <h1>text-underline-positionプロパティ</h1>
+  <p><span id="line1">アンダーライン</span>をひきます。</p>
+  <p><span id="line2">アンダーライン</span>をひきます。</p>
+  <p><span id="line3">アンダーライン</span>をひきます。</p>
+</body>
+</html>

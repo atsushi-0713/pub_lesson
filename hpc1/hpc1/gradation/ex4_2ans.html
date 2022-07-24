@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSS練習</title>
+<style>
+body{
+  font-family: "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro";
+}
+p{
+  font-size: 20px;
+  width: 300px;
+  height: 200px;
+  margin: 10px;
+  color: #000;
+  text-shadow: 0 0 3px #fff;
+  border: solid 1px #999;
+}
+#wrap{
+  display: flex;
+}
+#aaa{
+  background: radial-gradient(circle, red, pink, red, pink, red, pink);
+}
+#bbb{
+  background: radial-gradient(circle closest-corner at bottom, white, red);
+}
+#ccc{
+  background: radial-gradient(circle 100px at 100px 100px, white 60%, red 80%, white 100%);
+}
+</style>
+</head>
+<body>
+  <h1>円形グラデーションの演習</h1>
+  <div id="wrap">
+    <p id="aaa">円形グラデーション1</p>
+    <p id="bbb">円形グラデーション2</p>
+    <p id="ccc">円形グラデーション3</p>
+  </div>
+</body>
+</html>

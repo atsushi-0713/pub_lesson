@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+body{
+  font-family: "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro";
+}
+p{
+  margin: 20px;
+  font-size: 20px;
+}
+.gfont{
+  font-family: 'Modak', cursive;
+}

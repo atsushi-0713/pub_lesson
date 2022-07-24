@@ -1,0 +1,21 @@
+@media screen and (min-width:992px){
+  /*PC向けのCSS*/
+  div{
+    background-color: aqua;
+    height: 300px;
+  }
+}
+@media screen and (min-width:768px) and (max-width:991px){
+  /*タブレット向けのCSS*/
+  div{
+    background-color: hotpink;
+    height: 200px;
+  }
+}
+@media screen and (max-width:767px){
+  /*スマートフォン向けのCSS*/
+  div{
+    background-color: orange;
+    height: 100px;
+  }
+}
