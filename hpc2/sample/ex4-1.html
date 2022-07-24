@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JavaScript演習問題２</title>
+</head>
+<body>
+<script>
+var num = Math.random() * 5;
+num = Math.floor(num);
+console.log(num);
+
+if(num === 4){
+  window.alert("今日の運勢は「大吉」です。");
+
+}else if (num === 3){
+  window.alert("今日の運勢は「中吉」です。");
+
+}else if (num === 2){
+  window.alert("今日の運勢は「小吉」です。");
+
+}else if (num === 1){
+  window.alert("今日の運勢は「凶」です。");
+
+}else if (num === 0){
+  window.alert("今日の運勢は「大凶」です。");
+}
+</script>
+</body>
+</html>
