@@ -1,0 +1,84 @@
+■スクロールアクション部分のコピー
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script>
+    $(function() {
+        $(window).scroll(function() {
+            console.log("aaaaaaaa");
+            const winTop = $(window).scrollTop();
+            console.log(winTop);
+        });
+    });
+</script>
+
+
+■<br>の追加
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+■50pxスクロールしたら発動するコードの追加
+if(winTop>50){
+  $("#test").addClass("active");
+}
+
+■50pxスクロールしたら発動するコードの追加
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script>
+    $(function() {
+        $(window).scroll(function() {
+            const winTop = $(window).scrollTop();
+            console.log(winTop);
+
+            if(winTop>50){
+              $("#test").addClass("active");
+            }
+        });
+    });
+</script>
+
+
+■CSSの追加１
+<style>
+  .active{
+    background-color:red;
+  }
+</style>
+
+
+■CSSの追加２
+<style>
+  .active{
+    background-color:red;
+  }
+  #test{
+    transition: 0.5s;
+  }
+</style>
+
+
+■CSSの追加３
+<style>
+  #test.active{
+    background-color:red;
+    transform: translateX(0px);
+  }
+  #test{
+    transition: 0.5s;
+    transform: translateX(-500px);
+  }
+</style>
+
+
+■CSSの追加４
+<style>
+  #test.active{
+    background-color:red;
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  #test{
+    transition: 0.5s;
+    transform: translateY(20px);
+    opacity: 0;
+  }
+</style>
