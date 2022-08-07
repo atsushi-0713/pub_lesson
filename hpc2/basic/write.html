@@ -6,10 +6,17 @@
 </head>
 
 <body>
-  <p>JavaScriptの練習です</p>
+  <p id="demo">JavaScriptの練習です</p>
 
   <script>
-    window.document.write("こんにちは！");
+    // document.write("こんにちは！");
+    const demo = document.getElementById("demo");
+    document.bgColor = "red";
+    // demo.innerHTML = "デミ";
+    // demo.bgColor = "green";
+    console.log(demo);
+    demo.innerText = "こんにちは";
+    document.bgColor = "green";
   </script>
 </body>
 </html>
