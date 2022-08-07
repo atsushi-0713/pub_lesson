@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="style.css">
+</head>
+<body onload="start()">
+
+<canvas id="canvas" width="300" height="200"></canvas>
+
+<script>
+
+    // Webページのロード後に開始
+    function start() {
+        // Canvasを選択して、2次元コンテクストを取り出す
+        const canvas  = document.querySelector('#canvas');
+        const context = canvas.getContext('2d');
+
+        // 移動用の変数を初期化
+        let x = 0;
+        let y = 0;
+
+        // 繰り返し処理  10msecごとに関数を実行
+        setInterval(function() {
+            // 画面をクリアして、アニメーションする矩形を描画
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            context.fillRect(x, y, 20, 20);
+
+            // 位置を変更
+            x ++;  // x位置を1大きくする
+            y ++;  // y位置を1大きくする
+
+            // 画面からはみ出たら最初に戻す
+            if (x > canvas.width)  { x = 0 }
+            if (y > canvas.height) { y = 0 }
+        }, 10);
+    };
+
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="menu"></div>
+
+<script>
+
+    // DOMの読み込み終了時の処理を登録
+    window.addEventListener('DOMContentLoaded', function() {
+        // 注文のデータ
+        const menuArray = [
+            'ホットコーヒー',
+            'チョコケーキ',
+            'アイスコーヒー',
+            'トースト'
+        ];
+
+        // 結果用の変数
+        let result = '';
+
+        // 全ての注文を処理
+        for (let i = 0; i < menuArray.length; i ++) {
+            const menu = menuArray[i];
+            const className = i % 2 === 0 ? 'even' : 'odd';
+            result += `<div class="menuItem ${className}">
+<div>${menu}</div>
+</div>`;
+        }
+
+        // 出力先を選択して、HTMLの文字列を挿入
+        document.querySelector('#menu').innerHTML = result;
+    });
+
+</script>
+</body>
+</html>

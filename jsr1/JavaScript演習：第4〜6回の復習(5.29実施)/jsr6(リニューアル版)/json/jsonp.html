@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+</head>
+<body onload="start()">
+<script>
+
+    // Webページのロード後に開始
+    function start() {
+        // body に script タグを加える
+        const el = document.createElement('script');
+        el.setAttribute('src', './jsonp.js');
+        document.body.appendChild(el);
+    }
+
+    // JSONPが呼ぶ関数
+    function back(jsonText) {
+        console.log(jsonText);
+    }
+
+</script>
+</body>
+</html>

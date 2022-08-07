@@ -1,0 +1,41 @@
+■基本のHTML
+<html>
+<head>
+<meta charset="utf-8">
+
+</head>
+<body>
+  <button id="btn">クリック</button>
+<script>
+</script>
+</body>
+</html>
+
+■JSONの基本形
+var json = {
+  "name": "taro",
+  "age": "30",
+  "tel": "090-0123-4567"
+}
+console.log(json);
+
+
+■JSON.stringify()でオブジェクトデータをJSONに変換
+var obj = {
+    name: '太郎',
+    age: 30,
+    area: 'Tokyo'
+}
+var json2 = JSON.stringify(obj);
+console.log(json2);
+//console.log(json2.name);
+
+
+■JSON.parse()でJSONをオブジェクトデータに変換
+json2 = JSON.parse(json2);
+console.log(json2.name);
+
+
+■APIキー
+00955e7b233485eb8569b1162778577e
+

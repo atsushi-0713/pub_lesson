@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+
+<script>
+
+    function examResult(score) {
+        if (score >= 80) {
+            // 1「let」で変数を宣言
+            let result = '合格です！';
+
+            // 2 ブロックスコープの内側
+            console.log('2 試験2 結果: ' + result);
+        }
+
+        // 3 ブロックスコープの外側
+        console.log('3 試験2 結果: ' + result);
+    };
+
+    examResult(90);
+
+</script>
+</body>
+</html>

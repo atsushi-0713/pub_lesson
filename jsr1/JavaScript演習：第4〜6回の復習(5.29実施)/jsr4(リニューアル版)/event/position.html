@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="position.css">
+</head>
+<body>
+<div id="chase"></div>
+
+<script>
+
+    // DOMの読み込み終了時の処理を登録
+    window.addEventListener('DOMContentLoaded', function() {
+        // マウス移動時の処理を登録
+        document.querySelector('body').addEventListener('mousemove', function(e) {
+            const elChase = document.querySelector('#chase');
+            elChase.style.left = `${e.clientX - 10}px`;
+            elChase.style.top  = `${e.clientY - 10}px`;
+        });
+    });
+
+</script>
+</body>
+</html>

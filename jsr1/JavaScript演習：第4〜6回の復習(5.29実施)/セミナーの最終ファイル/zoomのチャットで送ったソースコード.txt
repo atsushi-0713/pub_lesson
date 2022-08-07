@@ -1,0 +1,25 @@
+document.querySelector('#test1').addEventListener('click',function(){
+  document.write('こんにちは');
+});
+
+------------------------
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+------------------------
+
+<script>
+  $(function(){
+    $('p').css('background-color','red');
+  });
+</script>
+
+------------------------
+
+<script>
+  $(function(){
+    $("#btn").on('click',function(){ 
+      $('p').css('background-color','red');
+    });
+  });
+</script>

@@ -1,0 +1,44 @@
+  h1#topPhoto{
+    height: 160px;
+    padding-top: 50px;
+    margin-bottom: 20px;
+  }
+  .active {
+    background-color: #700303;
+    color:#fff;
+  }
+
+  #menu {
+    min-height: 500px;
+    width: 90%;
+    margin: 0 auto 30px;
+  }
+  #menu #btn {
+  	overflow: hidden;
+  	margin-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  #menu #btn li {
+    clear: none;
+  	margin: 5px;
+    padding:5px 10px;
+  	cursor: pointer;
+  }
+  #menu #shuffleList{
+
+  }
+  #menu #shuffleList li{
+    width: 350px;
+    float:left;
+    clear: none;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 0 10px rgba(90,40,0,0.2);
+  }
+#shuffleList {
+    font-size: 120%;
+}

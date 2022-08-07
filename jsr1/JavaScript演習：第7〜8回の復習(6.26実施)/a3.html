@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+    table th {
+      background: #379ce8;
+      border: solid 1px #ccc;
+      color: #fff;
+      padding: 10px;
+    }
+    table td {
+      border: solid 1px #ccc;
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body onload="start()">
+  <p>jQueryでAjaxを実行</p>
+  <table id="users">
+    <tr>
+      <th>番号</th>
+      <th>名前</th>
+    </tr>
+  </table>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script>
+    // Webページのロード後に開始
+    function start() {
+      // URLの作成
+      const url = 'https://jsonplaceholder.typicode.com/users';
+
+      $.ajax({
+        url: url
+      })
+        .done(function (obj) {
+
+          // そのまま出力
+          console.log(obj);
+
+          // データを表形式で表示
+          $.each(obj, function (i, user1) {
+            // 1件分の抽出ができているか確認
+            console.log(user1);
+
+            //idと名前をそれぞれ変数に移す
+            let user_id = user1.id;
+            let user_name = user1.name;
+
+            // 1行分のコードを作成
+            let html_code = "<tr><td>" + user_id + "</td><td>" + user_name + "</td></tr>";
+
+            // 文字列→HTMLのオブジェクトに変換
+            let tr_block = $(html_code);
+
+            // <table>の最後に追加
+            $('#users').append(tr_block);
+            
+          });
+        })
+    }
+  </script>
+</body>
+
+</html>

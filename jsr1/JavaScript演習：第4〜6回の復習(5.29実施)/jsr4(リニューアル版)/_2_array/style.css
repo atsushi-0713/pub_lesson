@@ -1,0 +1,9 @@
+#shuffleList {
+    font-size: 120%;
+}
+.odd {
+    color: #dd4444;
+}
+.even {
+    color: #0088dd;
+}

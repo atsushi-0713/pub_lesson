@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+</head>
+<body>
+<h1>JavaScript 演習セミナー３</h1>    
+<input type="text" id="abc">
+<input type="button" value="判定！" onclick="aaa()">
+
+<script>
+    // 【問題９】テキストボックスの入力値の判定２
+    // 問題８と同じ判定をして、以下のようにしましょう
+    // 判定結果がOKのとき→テキストボックスの背景を緑
+    // 判定結果がNGのとき→テキストボックスの背景を赤
+
+    // １：ユーザー定義関数aaaを作り、判定ボタンがクリックされたら動くように「onclick="aaa()"」を記述
+    function aaa(){
+
+        //３：テキストボックスの<input>タグを取得※JS２の教科書参考
+        const tag = document.getElementById("abc");
+        console.log(tag);
+
+        //４：<input>タグに書かれた文字列を取得
+        const text = tag.value;
+        console.log(text);
+
+        //２：問題７をコピぺ
+        const res1 = text.match(/\d{2,3}-?\d{4}-?\d{4}/);
+        console.log(res1);
+
+        if(res1==null){
+            //ダメなときの処理
+            console.log("NG");
+            //★ここを追加★
+            document.getElementById("abc").style.backgroundColor="red";
+        }else{
+            //OKのときの処理
+            console.log("OK");
+            //★ここを追加★
+            document.getElementById("abc").style.backgroundColor="lightgreen";
+        }
+    }
+</script>
+</body>
+</html>

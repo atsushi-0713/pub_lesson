@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+</head>
+<body onload="start()">
+<script>
+
+    // キャラクター
+    class Character {
+        // コンストラクター
+        constructor(name, hp, strength) {
+            this.name = name;
+            this.hp = hp;
+            this.hpMax = hp;
+            this.strength = strength;
+        }
+
+        // ステータス文字列取得
+        getStatus() {
+            return `${this.name} HP ${this.hp}/${this.hpMax}`;
+        }
+    }
+
+    // 処理の開始
+    function start() {
+        // キャラクターを作る
+        const char1 = new Character('町人',  50, 10);
+        const char2 = new Character('戦士', 100, 20);
+
+        // 変数の初期化
+        let result = '';
+
+        // どちらかが倒れるまで戦闘
+        while (char1.hp > 0 && char2.hp > 0) {
+            // おたがいの力の分だけ、相手のHPを減らす
+            char2.hp -= char1.strength;
+            char1.hp -= char2.strength;
+
+            // ステータスを得て文字列に加える
+            result += `${char1.getStatus()}\n`;
+            result += `${char2.getStatus()}\n`;
+        }
+
+        // 戦闘終了メッセージ
+        result += '戦闘終了。\n';
+        if (char1.hp <= 0) {
+            result += `${char1.name}は倒れた。\n`;
+        }
+        if (char2.hp <= 0) {
+            result += `${char2.name}は倒れた。\n`;
+        }
+
+        // 結果を出力
+        console.log(result);
+    }
+
+</script>
+</body>
+</html>

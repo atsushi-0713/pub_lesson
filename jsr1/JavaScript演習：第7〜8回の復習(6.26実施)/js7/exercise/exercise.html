@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<form>
+  <dl>
+    <dt>住所</dt>
+    <dd><select id="address"></select></dd>
+    <button type="button" onclick="exec()">実行</button>
+  </dl>
+</form>
+<div id="weatherImage"></div>
+<div id="weatherBody"></div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+
+<script>
+
+	// 住所用の変数
+	let address;
+
+    // 住所のセット
+    function setAddress(text) {
+        // address の準備
+        try {
+            // JSON文字列をオブジェクトに
+            address = JSON.parse(text);
+
+            // selectタグ用の選択肢を作成
+            let html = '';
+            for (let i = 0; i < address.length; i ++) {
+                const d = address[i];
+                html += `<option value="${i}">${d[3]} - ${d[5]}</option>`
+            }
+
+            // selectタグ用の選択肢を加える
+            $('#address').html(html);
+        } catch(e) {
+        }
+    }
+
+    // ボタンクリック時に実行
+    function exec() {
+        // URLの作成
+        const appid = '/* ここにAPIキーを貼り付けてください。 */';
+        const i = $('#address').val();
+        const d = address[i];
+        const addressText = d[3] + d[5];
+        const lat = d[6];  // 経度
+        const lon = d[7];  // 緯度
+
+        const url = 'https://api.openweathermap.org/data/2.5/weather?'
+            + `lat=${lat}&lon=${lon}&units=metric&appid=${appid}`;
+        console.log(url);
+
+        // ajax
+        $.ajax(url)
+        .done(function(obj) {
+            // データ出力
+            console.log(obj);
+
+            // 画像のHTMLを組み立てて表示
+            const urlImgBase = 'https://openweathermap.org/img/wn/';
+            const htmlImg =  `<img src="${urlImgBase}${obj.XXXXX}@4x.png">`;
+            console.log(htmlImg);
+            document.querySelector('#weatherImage').innerHTML = htmlImg;
+
+            // 情報を組み立てて表示
+            const htmlInf = `<div>場所：${addressText}</div>
+<div>温度：${obj.XXXXX} ℃
+<div>湿度：${obj.XXXXX} ％</div>`;
+            console.log(htmlInf);
+            document.querySelector('#weatherBody').innerHTML = htmlInf;
+        });
+    }
+
+</script>
+<script src="address.js"></script>
+</body>
+</html>

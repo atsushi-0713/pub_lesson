@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+</head>
+<body onload="start()">
+<div id="weatherImage"></div>
+<div id="weatherBody"></div>
+
+<script>
+
+    // Webページのロード後に開始
+    function start() {
+        // URLの作成
+        const appid = '/* ここにAPIキーを貼り付けてください。 */';
+        const q     = 'Tokyo,JP';
+        const url   = 'https://api.openweathermap.org/data/2.5/weather?'
+            + `q=${q}&units=metric&appid=${appid}`;
+
+        // fetch
+        fetch(url)
+        .then(function(res) {
+            res.json().then(function(obj) {
+                // データ出力
+                console.log(obj);
+
+                // 出力先を選択して、画像を表示
+                const urlImgBase = 'https://openweathermap.org/img/wn/';
+                const htmlImg =  `<img src="${urlImgBase}${obj.XXXXX}@4x.png">`;
+                console.log(htmlImg);
+                document.querySelector('#weatherImage').innerHTML = htmlImg;
+
+                // 出力先を選択して、HTMLの文字列を挿入
+                const htmlInf = `<div>場所：${obj.XXXXX}</div>
+<div>温度：${obj.XXXXX} ℃</div>
+<div>湿度：${obj.XXXXX} ％</div>`
+                console.log(htmlInf);
+                document.querySelector('#weatherBody').innerHTML = htmlInf;
+            });
+        });
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="menu"></div>
+
+<script>
+
+    // DOMの読み込み終了時の処理を登録
+    window.addEventListener('DOMContentLoaded', function() {
+        // 注文のデータ
+        const menuObj = {
+            'ホットコーヒー': 500,
+            'チョコケーキ': 700,
+            'アイスコーヒー': 600,
+            'トースト': 400
+        };
+
+        // 結果用の変数
+        let result = '';
+
+        // プロパティ名の一覧を得る
+        const keyArray = Object.keys(menuObj);
+
+        // 全ての注文を処理
+        for (let i = 0; i < keyArray.length; i ++) {
+            const name  = keyArray[i];
+            const price = menuObj[name];
+            result += `<div class="menuItem">
+<div>${name}</div>
+<div>${price}</div>
+</div>`;
+        }
+
+        // 出力先を選択して、HTMLの文字列を挿入
+        document.querySelector('#menu').innerHTML = result;
+    });
+
+</script>
+</body>
+</html>

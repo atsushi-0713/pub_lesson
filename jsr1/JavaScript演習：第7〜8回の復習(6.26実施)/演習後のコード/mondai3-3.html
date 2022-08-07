@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  #canvas {
+    border: 1px solid #000;
+  }
+</style>
+</head>
+
+<body onload="start()">
+  <h1>canvas上にランダムな水玉の描画(particles.jsの利用)</h1>
+  <canvas id="canvas" width="500" height="500"></canvas>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>
+  <script>
+    // Webページのロード後に開始
+    function start() {
+
+      Particles.init({
+        selector: '#canvas',
+        sizeVariations: 50,
+        color: [
+        'rgba(0,187,221,.9)', 'rgba(0,187,221,.5)', 'rgba(0,187,221,.2)'
+        ]
+      });
+    };
+  </script>
+</body>
+</html>

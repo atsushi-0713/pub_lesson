@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+</head>
+<body onload="start()">
+<div id="weatherImage"></div>
+<div id="weatherBody"></div>
+
+<script>
+
+    // Webページのロード後に開始
+    function start() {
+        // URLの作成
+        const appid = '/* ここにAPIキーを貼り付けてください。 */';
+        const q     = 'Tokyo,JP';
+        const url   = 'https://api.openweathermap.org/data/2.5/weather?'
+            + `q=${q}&units=metric&appid=${appid}`;
+
+        // fetch
+        fetch(url)
+        .then(function(res) {
+            res.json().then(function(obj) {
+                // データ出力
+                console.log(obj);
+
+                // 変数の初期化
+                const p = {};
+                p.name = obj.name;  // 名前
+                p.id   = obj.id;    // ID
+
+                p.latitude  = obj.coord.lat;  // 緯度 -180～180
+                p.longitude = obj.coord.lon;  // 経度 -90～90
+
+                p.weatherId   = obj.weather[0].id;           // 天気ID
+                p.weatherMain = obj.weather[0].main;         // 天気グループ
+                p.weatherDesc = obj.weather[0].description;  // 解説文
+                p.weatherIcon = obj.weather[0].icon;         // アイコン
+
+                p.urlIcon   = `https://openweathermap.org/img/wn/${p.weatherIcon}.png`
+                p.urlIcon2x = `https://openweathermap.org/img/wn/${p.weatherIcon}@2x.png`
+                p.urlIcon4x = `https://openweathermap.org/img/wn/${p.weatherIcon}@4x.png`
+                    // アイコンのURL 50x50, 100x100, 200x200
+
+                p.temp     = obj.main.temp;        // 温度
+                p.feels    = obj.main.feels_like;  // 体感温度
+                p.pressure = obj.main.pressure;    // 気圧 hPa
+                p.humidity = obj.main.humidity;    // 湿度 ％
+                p.tempMin  = obj.main.temp_min;    // 現在の最低気温
+                p.tempMax  = obj.main.temp_max;    // 現在の最高気温
+
+                p.windSpeed = obj.wind.speed;  // 風速
+                p.windDeg   = obj.wind.deg;    // 風向
+
+                p.clouds = obj.clouds.all;  // 雲量 ％
+
+                p.date        = new Date(obj.dt * 1000);           // 日時
+                p.dateStr     = p.date.toLocaleString();           // 日時 現地表記
+                p.sunrise     = new Date(obj.sys.sunrise * 1000);  // 日出
+                p.sunriseStr  = p.sunrise.toLocaleString();        // 日出 現地表記
+                p.sunriseTStr = p.sunrise.toLocaleTimeString();    // 日出 時刻
+                p.sunset      = new Date(obj.sys.sunset * 1000);   // 日入
+                p.sunsetStr   = p.sunset.toLocaleString();         // 日入 現地表記
+                p.sunsetTStr  = p.sunset.toLocaleTimeString();     // 日入 時刻
+
+                // データ出力
+                console.log(JSON.stringify(p, null, '  '));
+
+                // 出力先を選択して、画像を表示
+                document.querySelector('#weatherImage').innerHTML =
+                    `<img src="${p.urlIcon4x}">`;
+
+                // 出力先を選択して、HTMLの文字列を挿入
+                document.querySelector('#weatherBody').innerHTML =
+                      `<div>場所：${p.name}</div>`
+                    + `<div>温度：${p.temp} ℃（${p.tempMin}～${p.tempMax}）</div>`
+                    + `<div>気圧：${p.pressure} hPa</div>`
+                    + `<div>湿度：${p.humidity} ％</div>`
+                    + `<div>雲量：${p.clouds} ％</div>`
+                    + `<div>太陽：${p.sunriseTStr}～${p.sunsetTStr}</div>`
+                    + `<div>更新：${p.dateStr}</div>`;
+            });
+        });
+    }
+
+</script>
+</body>
+</html>

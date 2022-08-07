@@ -1,0 +1,12 @@
+#global-nav li:nth-child(2n) {
+    transform: translateY(5vh);
+}
+
+#global-nav li:nth-child(2n+1) {
+    transform: translateY(-5vh);
+}
+
+.effect {
+    transition: 0.8s !important;
+    transform: translateY(0vh) !important;
+}

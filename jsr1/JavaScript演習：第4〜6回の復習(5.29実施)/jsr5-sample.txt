@@ -1,0 +1,86 @@
+■基本のHTMLとCSS
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<style>
+.red {
+  background-color: #ff0000;
+}
+.hide {
+  visibility: hidden;
+}
+</style>
+</head>
+<body>
+  <button id="btn">クリック</button>
+  <p id="test1">段落です</p>
+</body>
+</html>
+
+
+■jQueryの読み込み
+<script src="●●"></script>
+
+
+■基本の文法
+<script>
+$(function() {
+    $('body').addClass('red ');
+});
+</script>
+
+■click()とtoggleClass()
+//ボタンを押すと背景色が切り替わり、また押すと元に戻る
+ $(function() {
+     $('#btn').on('click', function() {
+         $('body').toggleClass('red ');
+     });
+});
+
+//ボタンを押すとp要素が消え、また押すと元に戻る
+ $(function() {
+     $('#btn').on('click', function() {
+         $('#test1').toggleClass('hide');
+     });
+});
+
+
+■基本文法１
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+  <input type="button" id="btn" value="実行">
+  <p id="test1">段落です</p>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+  $(function() {
+    $('p').css('background-color','red');
+  });
+  </script>
+</body>
+</html>
+
+
+■基本文法２
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+  <input type="button" id="btn" value="実行">
+  <p id="test1">段落です</p>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+  $(function() {
+    $('#btn').on('click', function() {
+      $('p').css('background-color','red');
+     });
+  });
+  </script>
+</body>
+</html>

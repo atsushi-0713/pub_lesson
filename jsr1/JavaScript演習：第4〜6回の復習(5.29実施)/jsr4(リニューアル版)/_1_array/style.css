@@ -1,0 +1,27 @@
+body {
+    background: #fff8df;
+}
+.menuItem {
+    display: inline-block;
+    width:  250px;
+    height: 220px;
+    background: #ffffff;
+    margin: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    box-shadow: 4px 4px 4px rgba(0,0,0,0.6);
+
+    border: solid 10px #fff;
+    background-clip: content-box;
+    background: linear-gradient(#ddeeff 0%, #aabbcc 75%, #fff 75%);
+}
+
+.menuItem div {
+    margin-top: 170px;
+    font-weight: bold;
+    height: 25px;
+    color: #0088dd;
+}
+
+.odd  { background: linear-gradient(#ffdddd 0%, #eebbbb 75%, #fff 75%); }
+.odd div { color: #dd4444; }

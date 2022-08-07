@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+</head>
+<body onload="start()">
+    <p>通常のJavaScriptでAjaxを実行</p>
+<script>
+    // Webページのロード後に開始
+    function start() {
+        // URLの作成
+        const url  = 'https://jsonplaceholder.typicode.com/users';
+
+        // fetch
+        fetch(url)
+           .then(function(res) {
+                res.json().then(function(obj) {
+                    //そのまま出力
+                    console.log(obj);
+            });
+        });
+    }
+
+</script>
+</body>
+</html>

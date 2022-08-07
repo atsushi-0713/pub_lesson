@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<textarea id="text"></textarea>
+<div id="charLen"></div>
+
+<script>
+
+    // DOMの読み込み終了時の処理を登録
+    window.addEventListener('DOMContentLoaded', function() {
+        // キー上げ時の処理を登録
+        document.querySelector('#text').addEventListener('keyup', function() {
+            // 入力文字列を取得
+            const text = document.querySelector('#text').value;
+
+            // 文字数を表示
+            const result = '文字数：' + text.length;
+            document.querySelector('#charLen').innerText = result;
+        });
+    });
+
+</script>
+</body>
+</html>

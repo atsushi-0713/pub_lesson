@@ -1,0 +1,14 @@
+.hide-down {
+    transition: 1s;
+    opacity: 0;
+    transform: translateY(50px);
+}
+.hide-left {
+    transition: 1s 0.5s;
+    opacity: 0;
+    transform: translateX(-50px);
+}
+.show {
+    opacity: 1 !important;
+    transform: translate(0px, 0px) !important;
+}

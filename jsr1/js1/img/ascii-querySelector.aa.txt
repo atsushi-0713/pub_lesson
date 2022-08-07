@@ -1,0 +1,12 @@
+
+                                                      <article>
+                                                        <section>
+                                                        +-----------------------+  
+  document.querySelector('CSSセレクター') --選択------->| <div class="menu">    |
+                                                        |   <span class="name"> |
+                                                        |      カルボナーラ     |
+                                                        |   </span>             |
+                                                        | </div>                |
+                                                        +-----------------------+
+                                                        </section>
+                                                      </article>

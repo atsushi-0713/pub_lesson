@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="dataurl.css">
+</head>
+<body onload="start()">
+
+<canvas id="canvas" width="300" height="200"></canvas>
+
+<button id="save">保存</botton>
+
+<script>
+
+    // Webページのロード後に開始
+    function start() {
+        // Canvasを選択して、2次元コンテクストを取り出す
+        const canvas  = document.querySelector('#canvas');
+        const context = canvas.getContext('2d');
+
+        // 図形描画
+        context.fillStyle = '#603';          // 塗りつぶしスタイル
+        context.fillRect(0, 0, 250, 150);    // 矩形塗りつぶし
+
+        context.fillStyle = '#0af';          // 塗りつぶしスタイル
+        context.fillRect(50, 50, 250, 150);  // 矩形塗りつぶし
+
+        // ボタンクリック時の処理
+        document.querySelector('#save')  // id="save"を選択
+        .addEventListener('click', function(e) {  // クリック時の処理を追加
+            // 画像を作り、DOMに追加
+            const img = new Image();                  // Imageを作成
+            img.src = canvas.toDataURL('image/png');  // CanvasからDataURLを取得
+            document.body.appendChild(img);           // DOMに追加
+        });
+    };
+
+</script>
+</body>
+</html>

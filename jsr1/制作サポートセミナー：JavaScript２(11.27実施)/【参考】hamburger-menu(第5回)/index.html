@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IBJ cafe</title>
+<link href="style_sp.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<header>
+  <div id="logo"><a href="index.html"><img src="logo.png" alt="IBJ cafe" width="143" height="29"></a></div>
+  <div id="nav-toggle">
+      <div>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+  </div>
+  <div id="global-nav">
+    <nav>
+      <ul>
+        <li><a href="#concept">CONCEPT</a></li>
+        <li><a href="#menu">MENU</a></li>
+        <li><a href="#gallery">GALLERY</a></li>
+        <li><a href="#info">INFORMATION</a></li>
+        <li><a href="#access">ACCESS</a></li>
+        <li><a href="#reserv"><span>RESERVATION</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script>
+    // スマホハンバーガーメニュー
+    $(function () {
+        // ハンバーガーメニューをクリックしたときの処理
+        $('#nav-toggle').click(function() {
+            $('body').toggleClass('open');
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
+<title>IBJ cafe</title>
+<link href="common/css/style_pc.css" rel="stylesheet" type="text/css">
+<link href="common/css/style_sp.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="fade.css">
+</head>
+
+<body>
+<section id="scroll">
+
+</section>
+<main>
+  <section id="menu">
+    <h2>MENU<span>メニュー</span></h2>
+    <div class="container">
+      <section class="hide-left">
+        <h3>Drink</h3>
+        <ul>
+          <li><p title="Blend Coffee">ブレンドコーヒー</p><span class="menu-iced">ICED</span>/<span class="menu-hot">HOT</span><p>200円</p></li>
+          <li><p title="Cafe Latte">カフェラテ</p><span class="menu-iced">ICED</span>/<span class="menu-hot">HOT</span><p>250円</p></li>
+          <li><p title="Caramel Soy Late">キャラメルソイラテ</p><span class="menu-hot">HOT</span><p>300円</p></li>
+          <li><p title="Tea">紅茶</p><span class="menu-iced">ICED</span>/<span class="menu-hot">HOT</span><p>200円</p></li>
+          <li><p title="Home Made Lemonade">自家製レモネード</p><span class="menu-iced">ICED</span><p>300円</p></li>
+        </ul>
+      </section>
+      <div class="hide-down"><img src="images/menu01.jpg" alt="Drink menu"></div>
+
+      <section class="hide-left">
+        <h3>Food</h3>
+        <ul>
+          <li class="menu-new"><p title="Blue Berry Yogurt">ブルーベリーヨーグルト</p><p>350円</p></li>
+          <li><p title="Marinated Salmon Sandwich">サーモンマリネサンド</p><p>450円</p></li>
+          <li><p title="Lemon Mousse Tart">レモンムースのタルト</p><p>400円</p></li>
+        </ul>
+      </section>
+      <div class="hide-down"><img src="images/menu02.jpg" alt="Food menu"></div>
+    </div>
+  </section>
+</main>
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script>
+    // フェード
+    $(function() {
+        // スクロール時の処理
+        $(window).scroll(function() {
+            $('.hide-left, .hide-down').each(function() {
+                // 変数の宣言と代入
+                const winTop  = $(window).scrollTop();
+                const winH    = window.innerHeight;
+                const hideTop = $(this).offset().top;
+                console.log(winTop, winH, winTop + winH, hideTop);
+
+                // 見える位置に来たらメニューを表示
+                if (winTop + winH > hideTop) {
+                    $(this).addClass('show');
+                }
+            });
+        });
+    });
+
+</script>
+</body>
+</html>

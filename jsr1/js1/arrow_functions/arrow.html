@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+
+<script>
+
+    // アロー関数1（「=>」の記号を使う）
+    var discountArrow1 = (price, rate) => {
+        return price * rate;
+    }
+
+    // アロー関数2（引数が1つなら丸括弧を省略可能）
+    var discountArrow2 = price => {
+        return price * 0.7;
+    }
+
+    // アロー関数3（引数が0なら丸括弧のみ）
+    var discountArrow3 = () => {
+        return 1000;
+    }
+
+    // アロー関数4（戻り値の処理が1行で済むなら、波括弧とreturnを省略）
+    var discountArrow4 = (price, rate) => price * rate;
+
+</script>
+</body>
+</html>
