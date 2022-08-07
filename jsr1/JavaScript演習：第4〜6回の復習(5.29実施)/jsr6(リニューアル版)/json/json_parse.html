@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+
+    // 文字列をJSON化（正しいデータのとき）
+    const validText = `{"title": "JSコード大全", "price": 5800}`;
+
+    let jsonObj1 = null;
+    try {
+        jsonObj1 = JSON.parse(validText);
+    } catch(e) {
+        console.log(e);
+    }
+    console.log(jsonObj1);
+
+    // 文字列をJSON化（誤ったデータのとき）
+    const invalidText = `{""title: "JSコード大全2", "price": 6800}`;
+
+    let jsonObj2 = null;
+    try {
+        jsonObj2 = JSON.parse(invalidText);
+    } catch(e) {
+        console.log(e);
+    }
+    console.log(jsonObj2);
+
+</script>
+</body>
+</html>

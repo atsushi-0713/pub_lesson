@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+<button id="exec">実行</button>
+
+<script>
+
+    // DOMの読み込み終了時の処理を登録
+    window.addEventListener('DOMContentLoaded', function() {
+        // ボタンクリック時の処理を登録
+        document.querySelector('#exec').addEventListener('click', function() {
+            console.log('クリック');
+        });
+    });
+
+</script>
+</body>
+</html>

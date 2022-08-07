@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="style.css">
+</head>
+<body onload="start()">
+
+<canvas id="canvas" width="300" height="200"></canvas>
+
+<script>
+
+    // Webページのロード後に開始
+    function start() {
+        // Canvasを選択して、2次元コンテクストを取り出す
+        const canvas  = document.querySelector('#canvas');
+        const context = canvas.getContext('2d');
+
+        // 矩形（四角形）の塗りつぶし、線描画、消去
+        context.fillRect(20, 20, 120, 120);     // 塗りつぶし
+        context.strokeRect(120, 80, 100, 100);  // 線描画
+        context.clearRect(40, 40, 50, 50);      // 消去
+    };
+
+</script>
+</body>
+</html>

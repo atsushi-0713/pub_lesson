@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="paint.css">
+<body onload="start()">
+<ul>
+  <li><button id="rect">四角形</button></li>
+  <li><button id="free">鉛筆</button></li>
+  <li><button id="delete">削除</button></li>
+  <li><button id="save">画像出力</button></li>
+  <li><input  id="color" type="color" value="#000000"></li>
+</ul>
+
+<canvas id="canvas" width="300" height="200"></canvas>
+<div style="clear: both;"></div>
+
+<script>
+
+    // Webページのロード後に開始
+    function start() {
+        // Canvasを選択して、2次元コンテクストを取り出す
+        const canvas  = document.querySelector('#canvas');
+        const context = canvas.getContext('2d');
+
+        // 描画用変数
+        let startX;  // 開始座標X
+        let startY;  // 開始座標Y
+        let endX;    // 終了座標X
+        let endY;    // 終了座標Y
+        let tool = 'rect';  // ツール
+
+        //----------------------------------------
+        // ボタン操作
+
+        // 四角形ボタンの操作
+        document.querySelector('#rect').addEventListener('click', function(e) {
+            tool = 'rect';  // ツール切り換え
+        });
+
+        // 鉛筆ボタンの操作
+        document.querySelector('#free').addEventListener('click', function(e) {
+            tool = 'free';  // ツール切り換え
+        });
+
+        // 削除ボタンの操作
+        document.querySelector('#delete').addEventListener('click', function(e) {
+            context.clearRect(0, 0, canvas.width, canvas.height);  // 削除
+        });
+
+        // 画像出力ボタンの操作
+        document.querySelector('#save').addEventListener('click', function(e) {
+            const dataURL = canvas.toDataURL('image/png');
+            const img = new Image();                  // Imageを作成
+            img.src = canvas.toDataURL('image/png');  // CanvasからDataURLを取得
+            document.body.appendChild(img);           // DOMに追加
+        });
+
+        // 色変更ボタンの操作
+        document.querySelector('#color').addEventListener('change', function(e) {
+            context.strokeStyle = e.target.value;  // 描画スタイルの変更
+        });
+
+        //----------------------------------------
+        // マウス操作
+
+        // マウスを下げた時  処理の開始
+        canvas.addEventListener('mousedown', function(e) {
+            // Canvas内での座標位置を得る
+            const rect = e.target.getBoundingClientRect();  // Canvasの矩形情報
+            startX = e.clientX - rect.left;  // Canvas内 X位置
+            startY = e.clientY - rect.top;   // Canvas内 Y位置
+
+            // ツールによる分岐
+            if (tool === 'rect') { startRect() }  // 四角形描画
+            if (tool === 'free') { startFree() }  // 鉛筆描画
+        });
+
+        //----------------------------------------
+        // 四角形描画時
+
+        // 四角形描画時  開始時
+        function startRect() {
+            // イベントの登録
+            canvas.addEventListener('mousemove', moveRect);
+            canvas.addEventListener('mouseup',   endRect);
+        }
+
+        // 四角形描画時  マウスを移動した時
+        function moveRect(e) {
+            // Canvas内での座標位置を得る
+            const rect = e.target.getBoundingClientRect();  // Canvasの矩形情報
+            endX = e.clientX - rect.left;  // Canvas内 X位置
+            endY = e.clientY - rect.top;   // Canvas内 Y位置
+        }
+
+        // 四角形描画時  マウスを上げた時
+        function endRect(e) {
+            // 矩形を描画
+            context.strokeRect(startX, startY, endX - startX, endY - startY);
+
+            // イベントの削除
+            canvas.removeEventListener('mousemove', moveRect);
+            canvas.removeEventListener('mouseup',   endRect);
+        }
+
+        //----------------------------------------
+        // 鉛筆描画時
+
+        // 鉛筆描画時  開始時
+        function startFree() {
+            // イベントの登録
+            canvas.addEventListener('mousemove', moveFree);
+            canvas.addEventListener('mouseup',   endFree);
+
+            // パスの開始
+            context.beginPath();
+        }
+
+        // 鉛筆描画時  マウスを移動した時
+        function moveFree(e){
+            // Canvas内での座標位置を得る
+            var rect = e.target.getBoundingClientRect();  // Canvasの矩形情報
+            endX = e.clientX - rect.left;  // Canvas内 X位置
+            endY = e.clientY - rect.top;   // Canvas内 Y位置
+
+            // パスを追加して描画
+            context.lineTo(endX, endY);
+            context.stroke();
+        }
+
+        // 鉛筆描画時  マウスを上げた時
+        function endFree(e) {
+            // イベントの削除
+            canvas.removeEventListener('mousemove', moveFree);
+            canvas.removeEventListener('mouseup',   endFree);
+        }
+    };
+
+</script>
+</head>
+</body>
+</html>

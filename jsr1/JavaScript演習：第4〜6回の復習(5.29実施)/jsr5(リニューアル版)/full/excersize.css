@@ -1,0 +1,61 @@
+window,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+#loadingLogo {
+    width: 200px;
+    opacity: 0;
+}
+#loadingLogo img {
+    width: 100%;
+    height: auto;
+}
+#loadingWrap {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: #FFFFFF;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (min-width: 737px) {
+    #topPhoto span {
+        font-size: medium;
+        line-height: 0;
+    }
+    #topTextBig {
+        font-size: 4em !important;
+    }
+}
+@media screen and (max-width: 736px) {
+    #topPhoto span {
+        font-size: medium;
+    }
+    #topTextBig {
+        font-size: 2.3em !important;
+    }
+}
+#topText {
+    color: #FFFFFF;
+    opacity: 0;
+}
+
+/* Loading Animation */
+.showLoadingLogo {
+    transition: opacity 1.5s;
+    opacity: 1 !important;
+}
+.hideLoadingWrap {
+    transition: opacity 1s;
+    opacity: 0 !important;
+}
+.showTopText {
+    transition: opacity 1s 0.5s;
+    opacity: 1 !important;
+}

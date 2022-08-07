@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="style.css">
+</head>
+<body onload="start()">
+<canvas id="cnavasAnim"></canvas>
+<div id="doc"></div>
+
+<script>
+
+    // Webページのロード後に開始
+    function start() {
+        // テキストの追加
+        const t = 'Momotaro has a dog, a monkey and a pheasant. ';
+        document.querySelector('#doc').innerText = t.repeat(1000);
+
+        // Canvasを選択して、2次元コンテクストを取り出す
+        const canvas  = document.querySelector('#cnavasAnim');
+        const context = canvas.getContext('2d');
+
+        //----------------------------------------
+        // Canvasサイズをウィンドウサイズに合わせる
+        const w = canvas.width  = window.innerWidth;   // 横幅
+        const h = canvas.height = window.innerHeight;  // 高さ
+
+        // アニメ要素を作成
+        const animArr = [];
+        for (let i = 0; i < 100; i ++) {
+            animArr[i] = {
+                x: Math.random() * w,  // X位置
+                y: Math.random() * h   // Y位置
+            };
+        }
+
+        //----------------------------------------
+        // 画像の読み込み準備
+        const img = new Image();  // 画像を作成
+        img.src = 'circle.png';   // URLを指定
+
+        // 画像の読み込み終了後の処理を設定
+        img.addEventListener('load', function(e) {
+            // 繰り返し処理  10msecごとに関数を実行
+            setInterval(function() {
+                // 描画の準備
+                context.clearRect(0, 0, w, h);  // 画面を消去
+
+                // 各アニメ要素の処理
+                for (let i = 0; i < animArr.length; i ++) {
+                    // 変数の初期化
+                    const a = animArr[i];
+                    const size = i / animArr.length * 50;
+
+                    // 描画
+                    context.drawImage(img,  // 描画する画像
+                        0, 0, img.width, img.height,  // 画像元のXY横縦
+                        a.x, a.y, size, size  // 描画先のXY横縦
+                    );
+
+                    // 位置の更新
+                    a.y -= 0.05;
+                    if (a.y < 0) { a.y += h }  // 端まで来たらループさせる
+                }
+            }, 10);
+        });
+    };
+
+</script>
+</body>
+</html>

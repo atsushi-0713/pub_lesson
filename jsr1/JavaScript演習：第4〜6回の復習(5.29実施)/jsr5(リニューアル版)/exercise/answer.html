@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
+<title>IBJ cafe</title>
+<link href="common/css/style_pc.css" rel="stylesheet" type="text/css">
+<link href="common/css/style_sp.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="excersize.css">
+</head>
+
+<body>
+<header>
+  <div id="logo"><a href="index.html"><img src="common/images/logo.png" alt="IBJ cafe" width="143" height="29"></a></div>
+  <div id="nav-toggle">
+      <div>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+  </div>
+  <div id="global-nav">
+    <nav>
+      <ul>
+        <li><a href="#concept">CONCEPT</a></li>
+        <li><a href="#menu">MENU</a></li>
+        <li><a href="#gallery">GALLERY</a></li>
+        <li><a href="#info">INFORMATION</a></li>
+        <li><a href="#access">ACCESS</a></li>
+        <li><a href="#reserv"><span>RESERVATION</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <h1 id="topPhoto"><span id="topText"><span id="topTextBig">Taste the Time</span><br><span>わたしらしい時間を過ごす場所。</span></span></h1>
+</main>
+
+<!-- ローダー用のHTML -->
+<div id="loadingWrap">
+ <div id="loadingLogo"><img src="common/images/logo.png" alt="IBJCafe"></div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script>
+
+    $(function() {
+        // ロゴ表示のアニメーション
+        // （id=loadingLogo の要素に showLoadingLogo クラスを加える）
+        $('#loadingLogo').addClass('showLoadingLogo');
+    });
+
+    $(function() {
+        // 読み込み終了時に呼び出し
+        setTimeout(function() {
+            // 透明に
+            // （id=loadingWrap の要素に hideLoadingWrap クラスを加える）
+            $('#loadingWrap').addClass('hideLoadingWrap');
+
+            // 表示に
+            // （id=topText の要素に showTopText クラスを加える）
+            $('#topText').addClass('showTopText');
+
+            // 覆っている要素を非表示に
+            // （id=loadingWrap にCSSを加える）
+            setTimeout(function() {
+                $('#loadingWrap').css('visibility', 'hidden');
+            }, 1000);
+        }, 1500);
+    });
+
+</script>
+</body>
+</html>

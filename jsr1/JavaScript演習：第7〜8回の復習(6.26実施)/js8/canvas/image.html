@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="style.css">
+</head>
+<body onload="start()">
+
+<canvas id="canvas" width="300" height="200"></canvas>
+
+<script>
+
+    // Webページのロード後に開始
+    function start() {
+        // Canvasを選択して、2次元コンテクストを取り出す
+        const canvas  = document.querySelector('#canvas');
+        const context = canvas.getContext('2d');
+
+        // 画像の読み込み準備
+        const img = new Image();         // 画像を作成
+        img.src = './img/hibiscus.jpg';  // URLを指定
+
+        // 画像の読み込み終了後の処理を設定
+        img.addEventListener('load', function(e) {
+            // Canvasに画像を描画
+            context.drawImage(
+                img,                // 描画する画像
+                280, 70, 140, 140,  // 画像元のX位置、Y位置、横幅、高さ
+                 60, 10, 180, 180   // 描画先のX位置、Y位置、横幅、高さ
+            );
+        });
+    };
+
+</script>
+</body>
+</html>

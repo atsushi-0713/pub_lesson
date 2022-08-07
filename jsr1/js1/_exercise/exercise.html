@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="main.css">
+</head>
+<body onload="start()">
+<div id="menu"></div>
+
+<script>
+
+    // Webページのロード後に開始
+    function start() {
+        // 結果用の変数
+        var result;
+
+        // 入力データ（名前、価格）用の変数
+        var name  = 'カルボナーラ';
+        var price = 1380;
+
+        // HTML文字列を組み立てて変数に代入
+        result = '<div class="menuItem">\n'
+                + '<div>' + name  + '</div>\n'
+                + '<div>' + price + '</div>\n'
+                + '</div>';
+
+        // 出力先を選択して、HTMLの文字列を挿入
+        document.querySelector('#menu').innerHTML = result;
+    }
+
+</script>
+</body>
+</html>

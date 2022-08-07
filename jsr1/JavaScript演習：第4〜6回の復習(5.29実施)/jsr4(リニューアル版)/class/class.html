@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+
+<script>
+
+    // クラス
+    class Character {
+        // コンストラクター
+        constructor(name, hp, strength) {
+            // this を使い、プロパティを設定
+            this.name = name;
+            this.hp = hp;
+            this.hpMax = hp;
+            this.strength = strength;
+        }
+
+        // メソッド（ステータス文字列取得）
+        getStatus() {
+            return `HP ${this.hp}/${this.hpMax}`;
+        }
+    }
+
+    // キャラクターを作り、ステータスを出力
+    const char = new Character('勇者', 100);
+    console.log(`${char.name} ${char.getStatus()}`);
+
+</script>
+</body>
+</html>

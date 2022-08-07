@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<style>
+body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+}
+#chase {
+    width: 100px;
+    height: 100px;
+    border-radius:50px;
+    opacity: 0.5;
+    background-color: deepskyblue;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: 0.2s ease-out;
+}
+</style>
+</head>
+<body>
+<div id="chase"></div>
+
+<script>
+  // DOMの読み込み終了時の処理を登録
+  window.addEventListener('DOMContentLoaded', function() {
+    // マウス移動時の処理を登録
+    document.querySelector('body').addEventListener('mousemove', function(e) {
+      // function(e)のeは「イベントオブジェクト」
+      // イベントオブジェクトは、イベント情報すべてを持つオブジェクト
+      console.log(e.clientX);
+      console.log(e.clientY);
+
+      // <div>で作った丸の位置を、マウスの位置に合わせる
+      const elChase = document.querySelector('#chase');
+      elChase.style.left = e.clientX - 50 + "px";
+      elChase.style.top  = e.clientY - 50 + "px";
+    });
+  });
+</script>
+</body>
+</html>

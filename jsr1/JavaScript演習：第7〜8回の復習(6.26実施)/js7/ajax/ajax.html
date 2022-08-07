@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+</head>
+<body onload="start()">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+
+<script>
+
+    // Webページのロード後に開始
+    function start() {
+        // URLの作成
+        const appid = '/* ここにAPIキーを貼り付けてください。 */';
+        const q     = 'Tokyo,JP';
+        const url   = 'https://api.openweathermap.org/data/2.5/weather?'
+            + `q=${q}&units=metric&appid=${appid}`;
+
+        // ajax
+        $.ajax(url)
+        .done(function(obj) {
+            // データ出力
+            const txt = JSON.stringify(obj, null, '  ');
+            console.log(txt);
+        })
+    }
+
+</script>
+</body>
+</html>

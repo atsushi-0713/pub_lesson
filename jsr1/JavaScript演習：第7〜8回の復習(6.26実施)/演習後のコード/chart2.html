@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<style>
+  #wrapChart {
+    width: 640px;
+  }
+</style>
+</head>
+<body onload="start()">
+<div id="wrapChart">
+  <canvas id="myChart" width="640" height="480"></canvas>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+<script>
+    // Webページのロード後に開始
+    function start() {
+        // Canvas の 2D Context を取得
+        const context = document.getElementById('myChart').getContext('2d');
+
+        // チャート作成
+        new Chart(context, {
+            type: 'pie',
+            data: {
+                labels: ['Red','Yellow','Blue'],
+                datasets: [
+                    { 
+                      data: [20, 20, 30],
+                      backgroundColor: ['Red','Yellow','Blue']
+                    }
+                ]
+            },
+            options: { title: { display: true, text: '円グラフ' } }
+        });
+    };
+
+</script>
+</body>
+</html>

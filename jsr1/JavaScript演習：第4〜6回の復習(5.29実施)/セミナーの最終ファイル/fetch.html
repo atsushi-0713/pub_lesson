@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+</head>
+<body onload="start()">
+
+<script>
+
+    // Webページのロード後に開始
+    function start() {
+        // URLの作成
+        const appid = '00955e7b233485eb8569b1162778577e';
+        const q     = 'Tokyo,JP';
+        const url   = 'https://api.openweathermap.org/data/2.5/weather?'
+            + `q=${q}&units=metric&appid=${appid}`;
+
+        // fetch
+        fetch(url)
+        .then(function(res) {
+            res.json().then(function(obj) {
+                // データ出力
+                const txt = JSON.stringify(obj, null, '  ');
+                console.log(txt);
+            });
+        });
+        console.log("あいうえお");
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<style>
+textarea { box-sizing: border-box; width: 100%; height: 12em; display: block; }
+button   { box-sizing: border-box; width: 100%; height: 3em; margin: 0.5em 0; }
+</style>
+</head>
+<body>
+  <textarea id="src"></textarea>
+  <button onclick="exec()">変換</button>
+  <textarea id="dst"></textarea>
+
+<script>
+
+    // ボタンクリック時に実行
+    function exec() {
+        // 変数の初期化
+        let text = document.querySelector('#src').value;  // 入力を得る
+        text = text.trim();  // 前後の空白文字をのぞく
+        const arr = text.split('\n');  // 改行で区切り、配列にする
+        arr.shift();  // 先頭の要素を除く
+        for (let i = 0; i < arr.length; i ++) {
+            arr[i] = `[${arr[i]}]`;  // 各行の前後に[ ]をつける
+        }
+
+        // 結果を出力
+        let result = arr.join(',');  // カンマで結合
+        result = `[${result}]`;   // 外側の配列の[ ]をつける
+        result = `setAddress('${result}')`;  // 前後にJSONPのPaddingをつける
+        document.querySelector('#dst').value = result;  // 結果を出力
+    }
+
+</script>
+</body>
+</html>

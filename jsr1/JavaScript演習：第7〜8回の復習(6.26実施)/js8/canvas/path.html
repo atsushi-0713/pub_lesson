@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="style.css">
+</head>
+<body onload="start()">
+
+<canvas id="canvas" width="300" height="200"></canvas>
+
+<script>
+
+    // Webページのロード後に開始
+    function start() {
+        // Canvasを選択して、2次元コンテクストを取り出す
+        const canvas  = document.querySelector('#canvas');
+        const context = canvas.getContext('2d');
+
+        // パスの点を指定していく
+        context.beginPath();       // パスの開始
+        context.moveTo(150, 25);   // パスの始点：点1：上の頂点
+        context.lineTo(80, 175);   // パスを移動：点2：左下の頂点
+        context.lineTo(220, 175);  // パスを移動：点3：右下の頂点
+        context.closePath();       // パスを閉じる
+
+        // パスの線を描く
+        context.stroke();  // 線描画
+    };
+
+</script>
+</body>
+</html>

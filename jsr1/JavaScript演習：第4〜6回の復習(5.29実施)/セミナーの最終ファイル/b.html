@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+  <input type="button" value="ダメージ" id="test1">
+  <script>
+    // クラスの定義(設計図エリア)
+    class Character {
+      // コンストラクター(オブジェクトを作ったら、自動で実行される部分)
+      constructor() {
+        // thisを使い、プロパティの初期値を設定
+        this.name = "勇者A";
+        this.hp = 100;
+      }
+
+      // メソッド(ステータス文字列取得)
+      getStatus() {
+        let a = "name:"+this.name +" HP:"+this.hp;
+        return a;
+      }
+    }
+
+    // キャラクターを作り、ステータスを出力
+    const c1 = new Character();
+
+    console.log(c1.name);
+    console.log(c1.hp);
+
+    document.querySelector('#test1').addEventListener('click',function(){
+      c1.hp = c1.hp - 10;
+      console.log(c1.hp);
+      console.log(`${c1.getStatus()}`);
+  });
+    // console.log('${c1.getStatus()}');
+    // console.log(`${c1.getStatus()}`);
+    // SHift押しながら＠→`(バッククオート)
+
+  </script>
+</body>
+</html>

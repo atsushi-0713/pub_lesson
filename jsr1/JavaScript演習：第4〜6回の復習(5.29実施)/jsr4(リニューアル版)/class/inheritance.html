@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+
+<script>
+
+    // クラス
+    class Character {
+        // コンストラクター
+        constructor(name, hp, strength) {
+            // this を使い、プロパティを設定
+            this.name = name;
+            this.hp = hp;
+            this.hpMax = hp;
+            this.strength = strength;
+        }
+
+        // メソッド（ステータス文字列取得）
+        getStatus() {
+            return `HP ${this.hp}/${this.hpMax}`;
+        }
+    }
+
+    // 戦士（キャラクターの拡張）
+    class Fighter extends Character {
+        // コンストラクター
+        constructor(name, hp, strength) {
+            super(name, hp, strength);
+            this.strength = this.strength * 2;
+        }
+
+        // ステータス文字列取得
+        getStatus() {
+            return super.getStatus()  + ' (戦士) ';
+        }
+    }
+
+    // キャラクターを作り、ステータスを出力
+    const char1 = new Character('カレン', 100, 10);
+    const char2 = new Fighter('ドドム', 100, 10);
+
+    console.log(`${char1.name} Str ${char1.strength} ${char1.getStatus()}`);
+    console.log(`${char2.name} Str ${char2.strength} ${char2.getStatus()}`);
+
+</script>
+</body>
+</html>

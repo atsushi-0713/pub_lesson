@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>スクロール</title>
+<style>
+body{
+  height: 2000px;
+}
+#space {
+  height:800px;
+  background-color: aquamarine;
+}
+#box1{
+  width:300px;
+  height: 300px;
+  background-color: crimson;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 1s;
+}
+#box1.show {
+  opacity: 1;
+  transform: translateY(0px);
+}
+</style>
+</head>
+
+<body>
+<div id="space">空きスペース用</div>
+<div id="box1">ボックス１</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script>
+$(function () {
+  // スクロール時の処理
+  $(window).scroll(function () {
+    // スクロール量の取得
+    const scrollVal = $(this).scrollTop();
+    console.log(scrollVal);
+    // 見える位置に来たらメニューを表示
+    if (scrollVal > 500) {
+      $("#box1").addClass('show');
+    }else{
+      $("#box1").removeClass('show');
+    }
+  });
+});
+</script>
+</body>
+</html>

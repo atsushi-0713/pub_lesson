@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  #canvas{
+    border: 1px solid #000;
+  }
+</style>
+</head>
+<body onload="start()">
+  <h1>canvas上にランダムな四角形を表示１</h1>
+<canvas id="canvas" width="500" height="500"></canvas>
+<script>
+    // Webページのロード後に開始
+    function start() {
+
+        // Canvasを選択して、2次元コンテクストを取り出す
+        const canvas  = document.querySelector('#canvas');
+        const context = canvas.getContext('2d');
+
+        // 四角形の情報を持つオブジェクトshikaku1を作成
+        const shikaku1 = {};
+        shikaku1.len = 20;//四角形の長さ
+        shikaku1.x = 200;//四角形の横位置(canvasの左上を始点に右方向)
+        shikaku1.y = 100;//四角形の縦位置(canvasの左上を始点に下方向)
+        shikaku1.color = "#ffad93";//四角形の色
+        console.log(shikaku1);
+
+        //四角形をcanvasに描画する関数を定義
+        function drawShikaku(shikaku){
+          context.fillStyle = shikaku.color;
+          context.fillRect(shikaku.x, shikaku.y, shikaku.len, shikaku.len);
+        }
+
+        // 描画の実行
+        drawShikaku(shikaku1);
+    };
+
+</script>
+</body>
+</html>

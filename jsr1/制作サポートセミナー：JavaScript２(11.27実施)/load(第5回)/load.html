@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ロード完了</title>
+  <style>
+  #aaa{
+    width: 500px;
+    height: 500px;
+    background-color:darkcyan;
+  }
+  #aaa.on{
+    background-color:red;
+  }
+  #wrap{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  </style>
+</head>
+<body>
+  <div id="aaa"></div>
+  <input type="button" value="ボタン" id="btn">
+  <div id="wrap"></div>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script>
+  $(function () {
+    // ロード完了時のアクション※opacityを0にする方法はNGです
+    $("#wrap").fadeOut(1000);
+
+    // ボタンをクリックしたときの処理
+    $('#btn').click(function() {
+      $('#aaa').toggleClass('on');
+    });
+  });
+</script>
+</body>
+</html>

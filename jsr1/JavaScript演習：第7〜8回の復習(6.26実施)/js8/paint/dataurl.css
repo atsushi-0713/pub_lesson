@@ -1,0 +1,7 @@
+body {
+    background: #ffc;
+}
+#canvas {
+    background: url(./img/transparent.png);
+    border: solid 2px #888;
+}

@@ -1,0 +1,124 @@
+■関数とイベントの復習(ホームページCの内容)
+「ボタンを押したらこんにちはと表示」というイベント処理に変えてみましょう
+
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+<input type="submit" value="クリック" id="test1">
+<script>
+
+  document.write('こんにちは');
+
+</script>
+</body>
+</html>
+
+
+■addEventListenerメソッドで書き換えてみよう
+document.querySelector('#test1').addEventListener('click', function() {
+  document.write('こんにちは');
+});
+
+
+■段落の背景色を緑に変える
+document.querySelector('#test1').addEventListener('click', function() {
+  document.querySelector('#test2').style.backgroundColor = 'green';
+});
+
+
+■配列とオブジェクト
+
+//配列の操作(後ろに追加)
+let a = ['aaa','bbb','ccc'];
+a.push('ddd');
+console.log(a);
+
+//オブジェクトの操作
+let b = {a:100,b:200,c:300};
+Object.keys(b);
+console.log(b);
+
+
+■クラス
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+    class Price{
+        avg(){
+            console.log((100+120)/2);
+        }
+    }
+    let a1 =new Price();
+    a1.avg();
+</script>
+</body>
+</html>
+
+
+//クラスの活用1
+class Price{
+        avg(banana,apple){
+            console.log((banana+apple)/2);
+        }
+    }
+
+let a1 =new Price();
+a1.avg(100,120);
+let a2 =new Price();
+a2.avg(60,200);
+
+
+//クラスの活用2
+class Price{
+        avg(banana,apple){
+            console.log((banana+apple)/2);
+        }
+    }
+
+let a1 =new Price();
+a1.name='shibuya';
+console.log(a1.name);
+a1.avg(100,120);
+    
+let a2 =new Price();
+a2.name='shinjuku';
+console.log(a2.name);
+a2.avg(60,200);
+
+
+■クラスのサンプル
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+  <script>
+    // クラスの定義
+    class Character {
+      // コンストラクター
+      constructor() {
+        // thisを使い、プロパティの初期値を設定
+        this.name = "勇者";
+        this.hp = 100;
+      }
+
+      // メソッド(ステータス文字列取得)
+      getStatus() {
+        let a = "name:"+this.name +" HP:"+this.hp;
+        return a;
+      }
+    }
+
+    // キャラクターを作り、ステータスを出力
+    const c1 = new Character();
+    console.log(`${c1.getStatus()}`);
+
+  </script>
+</body>
+</html>

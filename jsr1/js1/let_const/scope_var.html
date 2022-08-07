@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+
+<script>
+
+    function examResult(score) {
+        if (score >= 80) {
+            // 1「var」で変数を宣言
+            var result = '合格です！';
+        }
+
+        // 2 関数スコープの内側
+        console.log('2 試験1 結果: ' + result);
+    };
+
+    examResult(90);
+
+    // 3 関数スコープの外側
+    console.log('3 試験1 結果: ' + result);
+
+</script>
+</body>
+</html>
