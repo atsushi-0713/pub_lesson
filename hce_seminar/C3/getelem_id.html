@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JavaScript練習</title>
+</head>
+
+<body>
+  <h1>要素ノード</h1>
+
+  <p id="color1">１つめのp要素です</p>
+  <p>２つめのp要素です</p>
+  <p>３つめのp要素です</p>
+
+  <div class="color2">１つめのdiv要素です</div>
+  <div class="color2">２つめのdiv要素です</div>
+  <div>３つめのdiv要素です</div>
+
+  <input type="button" value="id" onclick="color()">
+
+<script>
+function color(){
+  //idがcolor1の要素に対して、背景色を水色に変更
+  document.getElementById("color1").style.backgroundColor="aqua";
+}
+</script>
+</body>
+</html>
